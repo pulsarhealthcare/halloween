@@ -1,0 +1,306 @@
+html {
+	height:100%;
+}
+
+body {
+  background-color: #3C3C3C;
+  color: #fff;
+ height:100%;
+
+  /* Allow mouse dragging. */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-callout: none;
+  -ms-user-callout: none;
+  -o-user-callout: none;
+  -webkit-user-callout: none;
+  user-callout: none;
+  
+  /* disable touch panning/zooming */
+  -ms-touch-action: none;
+  touch-action: none;
+
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
+}
+
+
+#screen canvas {
+	max-height: 768px;
+}
+
+#screen canvas {
+  display: block;
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  
+  /* disable scaling interpolation */
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+#share {
+  margin: 10px auto;
+  text-align: center;
+}
+
+#share .fb-share-button iframe {
+  margin-top: -4px;
+}
+
+
+.preloadFont {
+	font-family: 'Oswald', sans-serif;
+	display: none;
+}
+#landing-page-terms{
+	background-image : url('./landing-images/terms.png');
+	height:100%;
+	width:1024px;
+	display:none;
+	position: relative;
+	top:-768px;;
+	margin:0 auto;
+}
+
+#closeterms {
+	width:100px;
+	height:100px;
+	float:left;
+	margin-top:100px;
+	margin-left:850px;
+}
+
+#landing-page {
+	background-image : url('./landing-images/background.jpg');
+	height:768px;
+	width:1024px;
+	margin:0 auto;
+}
+
+#landing-page h1 {
+	padding-top:57px;
+	margin-bottom:0px;
+	padding-left:42px;
+	width:190px;
+	color:#14259b;
+	font-family: 'Oswald', sans-serif;
+	font-size:28px;
+	text-align: center;
+	text-transform: uppercase;
+	margin:0px;
+		float:left;
+		padding-bottom:18px;
+}
+
+#landing-page p {
+	float:left;
+	margin-left:42px;
+	margin-top:7px;
+	clear: both;
+	width:190px;
+	font-size:12px;
+	text-align: center;
+	font-family: sans-serif;
+	color:#333;
+	line-height: 15px;
+}
+
+#landing-page .textfield {
+	border:1px solid #14259b;
+	padding:13px 11px;
+	color:#333;
+	margin-bottom:6px;
+	width: 168px
+}
+
+#user-form {
+	float:left;
+	margin-top:10px;
+	margin-left:42px;
+	width:190px;
+	clear: both;
+}
+
+
+#termslink {
+	float: left;
+	margin-top:5px;
+	font-family: sans-serif;
+	color:#333;
+	font-size: 10px;
+	margin-left:42px;
+	clear: both;
+	width:190px;
+	
+}
+
+
+#kickoff-button {
+	float: left;
+	margin-top:7px;
+	margin-left:76px;
+	clear: both;
+
+}
+
+#team-name-page {
+	background-image : url('./landing-images/team-name-background.jpg');
+	height:100%;
+	width:1024px;
+	margin:0 auto;
+	display:none;
+}
+
+#team-name-textfield {
+	background-color:#dbe441;
+	border:none;
+	position:relative;
+	top:337px;
+	left:142px;
+	height:103px;
+	width:689px;
+	padding:0 20px;
+	color: #333;
+	font-size: 60px;
+}
+
+#team-name-button {
+	position:relative;
+	top:460px;
+	left:-587px;
+}
+
+#team-selection-page {
+	background-image : url('./landing-images/team-selection-background.jpg');
+	height:100%;
+	width:1024px;
+	margin:0 auto;
+	display: none;
+}
+
+
+#team-selection-table {
+	position: relative;
+	left:440px;
+	top:140px;
+	border-spacing: 23px;
+}
+
+#team-selection-button {
+	position:relative;
+	top:325px;
+	left:150px;
+	
+}
+
+#team-vs-page {
+	background-image : url('./landing-images/vs-background.jpg');
+	height:100%;
+	width:1024px;
+	margin:0 auto;
+	display: none;
+}
+
+#team-vs-left-image {
+	position: relative;
+	left:52px;
+	top:184px;
+	z-index: 1;
+}
+
+#team-vs-right-image {
+	position: relative;
+	left:210px;
+	top:184px;
+	z-index: 1;
+}
+
+#team-label {
+
+	position: relative;
+	font-family: 'Oswald', sans-serif;
+	font-size:48px;
+	color:#14259b;
+	text-transform: uppercase;
+	z-index: 999;
+	top:92px;
+	left:77px;
+	overflow: hidden;
+	text-align: center;
+	width:340px;
+}
+
+#leader-board{
+	background-image : url('./landing-images/leaderboard-background.jpg'), url('./landing-images/play-again.png');
+	height:100%;
+	width:1024px;
+	margin:0 auto;
+}
+
+
+#instructions {
+	background-image : url('./landing-images/instructions-background.jpg');
+	height:100%;
+	width:1024px;
+	margin:0 auto;
+	display:none;
+}
+
+#instructions a {
+	float: left;
+	height:100%;
+	width:1024px;
+}
+
+.teamName, .score {
+	
+	color:#14259b;
+	font-family: 'Oswald', sans-serif;
+	font-size:45px;
+	float:left;
+	margin-bottom:45px;
+}
+.teamName {
+	margin-left:228px;
+	width:450px;
+	
+}
+
+.score {
+	width:120px;
+	margin-right:150px;
+	text-align: right;
+	float:right;
+}
+
+#teamName-0 {
+	margin-top:146px;
+}
+
+#score-0 {
+	margin-top:146px;
+}
+#leader-board-play-again {
+	background-image : url('./landing-images/play-again.png');
+	width:1024px;
+	height:768px;
+	margin:0 auto;
+	margin-top:-768px;
+	display:block;
+}
+body:after
+{
+content: url(left-algeria.png) url(left-argentina.png) url(left-brazil.png) url(left-cameroon.png) url(left-england.png) url(left-france.png) url(left-germany.png) url(left-greece.png) url(left-italy.png) url(left-japan.png) url(left-mexico.png) url(left-portugal.png) url(left-russia.png) url(left-southkorea.png) url(left-usa.png) url(right-algeria.png) url(right-argentina.png) url(right-brazil.png) url(right-cameroon.png) url(right-england.png) url(right-france.png) url(right-germany.png) url(right-greece.png) url(right-italy.png) url(right-japan.png) url(right-mexico.png) url(right-portugal.png) url(right-russia.png) url(right-southkorea.png) url(right-usa.png)
+display: none;
+}
+audio { height:0px; display:none;}
+
+
