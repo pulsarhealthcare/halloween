@@ -31,47 +31,11 @@
         <script type="text/javascript">
                 window.onReady(function onReady() {
                 
-                playGame();
-                    // Mobile browser hacks
-                    if (me.device.isMobile && !navigator.isCocoonJS) {
-                    // Prevent the webview from moving on a swipe
-                    window.document.addEventListener("touchmove", function (e) {
-                        e.preventDefault();
-                        window.scroll(0, 0);
-                        return false;
-                    }, false);
-                    // Scroll away mobile GUI
-                    (function () {
-                        window.scrollTo(0, 1);
-                        me.video.onresize(null);
-                    }).defer();
-                    me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
-                        window.scrollTo(0, 1);
-                    });
-                    }
-                });
                 
-                
-                function playGame() {
-                
-                var chatRef = new Firebase('https://pulsario.firebaseio.com');
-            var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
-            if (error) {
-            alert('error' + error);
-            return;
-            }
-            if (!user) {
-            auth.login('anonymous', {rememberMe: true});
-            return;
-            }
+                 game.onload('test');
+            
+        })
 
-            mainUser = user;
-                var queryDict = {}
-            location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
-                game.onload(mainUser, decodeURIComponent(queryDict.teamName), queryDict.oponentTeamKey, queryDict.selectedTeamKey);
-
-            });
-                }
             </script>
     </body>
 </html>
