@@ -7,11 +7,22 @@ game.resources = [
         src: "data/img/bg.png"
     },
 
+    //Characters
 
     {
         name: "character-pumkin",
         type: "image",
         src: "img/char_pumpkin.png"
+    },
+    {
+        name: "character-witch",
+        type: "image",
+        src: "img/char_witch.png"
+    },
+    {
+        name: "character-vampire",
+        type: "image",
+        src: "img/char_vampire.png"
     },
 
     {
