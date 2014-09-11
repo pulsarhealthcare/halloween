@@ -1,145 +1,22 @@
 game.resources = [
-
     {
         name: "bg",
         type: "image",
-        src: "data/img/bg.png"
-    }, {
-        name: "footballer-red",
+        src: "img/backgrounds/background_0.png"
+    }, 
+    {
+        name: "barrier",
         type: "image",
-        src: "data/img/footballer-red.png"
-    }, {
-        name: "footballer-green",
+        src: "img/barriers/barrier_0.png"
+    }, 
+    {
+        name: "character",
         type: "image",
-        src: "data/img/footballer-green.png"
-    }, {
-        name: "footballer-blue",
+        src: "img/characters/character_0.png"
+    }, 
+    {
+        name: "reward",
         type: "image",
-        src: "data/img/footballer-blue.png"
-    }, {
-        name: "footballer-orange",
-        type: "image",
-        src: "data/img/footballer-orange.png"
-    }, {
-        name: "footballer-white",
-        type: "image",
-        src: "data/img/footballer-white.png"
-    }, {
-        name: "players-red",
-        type: "image",
-        src: "data/img/players-red.png"
-    }, {
-        name: "players-green",
-        type: "image",
-        src: "data/img/players-green.png"
-    }, {
-        name: "players-blue",
-        type: "image",
-        src: "data/img/players-blue.png"
-    }, {
-        name: "players-orange",
-        type: "image",
-        src: "data/img/players-orange.png"
-    }, {
-        name: "players-white",
-        type: "image",
-        src: "data/img/players-white.png"
-    }, {
-        name: "reward-banana",
-        type: "image",
-        src: "data/img/reward-banana.png"
-    }, {
-        name: "reward-bananaX5",
-        type: "image",
-        src: "data/img/reward-bananaX5.png"
-    }, {
-        name: "reward-grapes",
-        type: "image",
-        src: "data/img/reward-grapes.png"
-    }, {
-        name: "reward-grapesX2",
-        type: "image",
-        src: "data/img/reward-grapesX2.png"
-    }, {
-        name: "reward-orange",
-        type: "image",
-        src: "data/img/reward-orange.png"
-    }, {
-        name: "reward-orangeX2",
-        type: "image",
-        src: "data/img/reward-orangeX2.png"
-    }, {
-        name: "reward-parrotgreen",
-        type: "image",
-        src: "data/img/reward-parrotgreen.png"
-    }, {
-        name: "reward-parrotred",
-        type: "image",
-        src: "data/img/reward-parrotred.png"
-    }, {
-        name: "reward-pear",
-        type: "image",
-        src: "data/img/reward-pear.png"
-    }, {
-        name: "reward-pearX2",
-        type: "image",
-        src: "data/img/reward-pearX2.png"
-    }, {
-        name: "reward-pineapple",
-        type: "image",
-        src: "data/img/reward-pineapple.png"
-    }, {
-        name: "reward-pineappleX2",
-        type: "image",
-        src: "data/img/reward-pineappleX2.png"
-    }, {
-        name: "reward-redcard",
-        type: "image",
-        src: "data/img/reward-redcard.png"
-    }, {
-        name: "reward-water",
-        type: "image",
-        src: "data/img/reward-water.png"
-    }, {
-        name: "reward-waterX2",
-        type: "image",
-        src: "data/img/reward-waterX2.png"
-    }, {
-        name: "reward-yellowcard",
-        type: "image",
-        src: "data/img/reward-yellowcard.png"
-    }, {
-        name: "ground-1",
-        type: "image",
-        src: "data/img/bg-1.jpg"
-    }, {
-        name: "ground-2",
-        type: "image",
-        src: "data/img/bg-2.jpg"
-    }, {
-        name: "ground-3",
-        type: "image",
-        src: "data/img/bg-3.jpg"
-    }, {
-        name: "gameoverbg",
-        type: "image",
-        src: "data/img/gameoverbg.jpg"
-    }, {
-        name: "gameoverbg-2",
-        type: "image",
-        src: "data/img/gameoverbg-2.jpg"
-    }, {
-        name: "hit",
-        type: "image",
-        src: "data/img/hit.png"
-    }, {
-        name: "life",
-        type: "image",
-        src: "data/img/life.png"
-    }, {
-        name: "transparent",
-        type: "image",
-        src: "data/img/transparent.png"
-    },
-
+        src: "img/rewards/reward_0.png"
+    }, 
 ];

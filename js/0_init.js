@@ -17,21 +17,19 @@ game.data = {
     oponentTeamKey: 'Unknown',
     selectedTeamKey: 'Unknown',
     user: 'Unknown',
-    ignoreLoadingScreen: false,
+    ignoreLoadingScreen: true,
     prevX: 0,
     isDown: false
 };
 
-game.onload = function(user, teamName, oponentTeamKey, selectedTeamKey) {
+game.onload = function(user) {
     me.sys.pauseOnBlur = false;
-    this.data.teamName = teamName;
-    this.data.oponentTeamKey = oponentTeamKey;
-    this.data.selectedTeamKey = selectedTeamKey;
     this.data.user = user;
-    /*      console.log(this.data.user + 'sdf'); */
+
     var width = 1024;
     var height = window.innerHeight;
     var scale = 1;
+
     if (isRetina() && window.ontouchstart !== 'undefined') {
         if (!me.video.init("screen", 1024, window.innerHeight, false, 'auto')) {
             alert("Your browser does not support HTML5 canvas.");
@@ -44,14 +42,15 @@ game.onload = function(user, teamName, oponentTeamKey, selectedTeamKey) {
         }
     }
     me.sys.fps = 30;
-    me.audio.init("mp3");
     me.loader.onload = this.loaded.bind(this);
     me.loader.preload(game.resources);
     me.state.change(me.state.LOADING);
 }
 
 game.loaded = function() {
+
         me.state.set(me.state.PLAY, new game.PlayScreen());
+
         me.state.set(me.state.GAME_OVER, new game.GameOverScreen());
 
         me.input.bindKey(me.input.KEY.LEFT, "moveLeft", false);
@@ -64,7 +63,7 @@ game.loaded = function() {
         me.pool.register("hit", HitEntity, true);
         me.pool.register("life", LifeLayer, false);
         me.pool.register("death", LifeLayer, false);
-
+     
 
         me.input.registerPointerEvent("pointerup", me.game.viewport, function(e) {
             game.data.isDown = false;
@@ -80,7 +79,7 @@ game.loaded = function() {
 
                     var win = window.open('./leader-board.html?teamName=' + encodeURIComponent(game.data.teamName) + '&oponentTeamKey=' + game.data.oponentTeamKey + '&selectedTeamKey=' + game.data.selectedTeamKey, '_self');
                 } else {
-
+                 
                     me.state.change(me.state.PLAY);
 
                 }
