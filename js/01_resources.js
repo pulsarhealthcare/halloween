@@ -49,46 +49,41 @@ game.resources = [
         src: "img/reward_03.png"
     },
     {
-        name: "reward-sweet-gold",
-        type: "image",
-        src: "img/reward_03.png"
-    },
-    {
         name: "reward-lolly-green",
         type: "image",
         src: "img/reward_04.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "reward-lolly-red",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_05.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "reward-lolly-blue",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_06.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "reward-sweet-treble",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_07.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "reward-cat",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_08.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "penalty-poison",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_09.png"
     },
     {
-        name: "reward-lolly-green",
+        name: "penalty-spider",
         type: "image",
-        src: "img/reward_04.png"
+        src: "img/reward_10.png"
     },
-
+ 
 
 
     {

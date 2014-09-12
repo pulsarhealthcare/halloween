@@ -26,6 +26,56 @@ var RewardEntity = me.ObjectEntity.extend({
             speed: 1,
             life: 0
         };
+        rewards[3] = {
+            chance: 10,
+            name: 'lolly-green',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[4] = {
+            chance: 10,
+            name: 'lolly-red',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[5] = {
+            chance: 10,
+            name: 'lolly-blue',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[6] = {
+            chance: 10,
+            name: 'sweet-treble',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[7] = {
+            chance: 10,
+            name: 'cat',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[8] = {
+            chance: 10,
+            name: 'poison',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        rewards[9] = {
+            chance: 10,
+            name: 'spider',
+            points: 10,
+            speed: 1,
+            life: 0
+        };
+        
 
      
        
