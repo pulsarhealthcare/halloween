@@ -56,11 +56,11 @@ var Character = me.ObjectEntity.extend({
             game.data.level ++;
             me.state.pause();
 
-            var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
+            var lvlScreen = new BackgroundLayer('screen_swamp', 21);
             me.game.world.addChild(lvlScreen);
                 
             for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
-            new TheGround
+            new TheGround;
             setTimeout(function() {
                 me.game.world.removeChild(lvlScreen);
                 me.state.resume();
@@ -74,10 +74,17 @@ var Character = me.ObjectEntity.extend({
             l1Time = (time - oldTime);
            
             if(l1Time == 20) {
-                
-
+                var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
+                me.game.world.addChild(lvlScreen);
                 me.state.pause();
                 game.data.level ++;
+                for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
+            new TheGround;
+                setTimeout(function() {
+                me.game.world.removeChild(lvlScreen);
+                me.state.resume();
+                oldTime = time;
+            },1000)
             }
         }
 

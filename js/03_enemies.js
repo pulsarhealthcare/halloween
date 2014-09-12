@@ -101,8 +101,8 @@ var PipeGenerator = me.Renderable.extend({
             //Pipes here
             var enemys = [];
             enemys[0] = ['pumpkins_gy','skulls_gy','spiders_gy','spiders_gy'];  
-            enemys[1] = ['skeletons_hh','skulls_hh','skulls0_hh','spiders_hh'];
             enemys[2] = ['ghosts_sw','ghosts0_sw','spiders_sw','skulls_sw'];
+            enemys[1] = ['skeletons_hh','skulls_hh','skulls0_hh','spiders_hh'];
 
             var random =  Math.floor(Math.random() * 3) ;
 
