@@ -49,6 +49,30 @@ game.resources = [
     //Level Two Enemys
 
     {
+        name: "enemy-skulls_sw",
+        type: "image",
+        src: "img/enemy-skulls_hh.png"
+    },
+
+    {
+        name: "enemy-skulls0_sw",
+        type: "image",
+        src: "img/enemy-skulls0_hh.png"
+    },
+  
+    {
+        name: "enemy-spiders_sw",
+        type: "image",
+        src: "img/enemy-skeletons-hh.png"
+    },
+    {
+        name: "enemy-ghosts_sw",
+        type: "image",
+        src: "img/enemy-spiders_hh.png"
+    },
+
+    //Level Three Enemys 
+     {
         name: "enemy-skulls_hh",
         type: "image",
         src: "img/enemy-skulls_hh.png"
