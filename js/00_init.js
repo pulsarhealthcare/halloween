@@ -42,7 +42,7 @@ game.onload = function(user, teamName) {
 
     me.sys.fps = 30;
 
-    me.audio.init("mp3");
+
     me.loader.onload = this.loaded.bind(this);
     me.loader.preload(game.resources);
 
@@ -120,6 +120,8 @@ var TheGround = Object.extend({
     init: function(scroll) {
         this.ground1 = new Ground(0, -2729 + me.video.getHeight(), scroll);
         me.game.world.addChild(this.ground1, 1);
+
+        refPool.push(this.ground1);
         this.collidable = false;
     },
 

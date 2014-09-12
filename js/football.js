@@ -6,31 +6,23 @@ var GameOverBackground = me.ObjectEntity.extend({
         settings.height = 768;
         settings.spritewidth = 1024;
         settings.spriteheight = 768;
-
-
-
         this.parent(x, y, settings);
     },
 
 
     update: function() {
-        /*        console.log('updatinh'); */
         if (game.data.mDown) {
 
         }
         return true;
     },
-
-
-
 });
-
+var refPool = [];
 
 game.PlayScreen = me.ScreenObject.extend({
     init: function() {},
 
-    onResetEvent: function() {
-
+    onResetEvent: function(test) {
         game.data.speedModifier = game.data.originalSpeedModifier;
         game.data.speedCounter = 0;
 
@@ -40,10 +32,11 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.start = false;
         game.data.newHiscore = false;
 
-        me.game.world.addChild(new BackgroundLayer('bg', 13));
+       me.game.world.addChild(new BackgroundLayer('bg', 13));
 
         this.ground = new TheGround(true);
-        me.game.world.addChild(this.ground, 11);
+        refPool.push(this.ground);
+        //me.game.world.addChild(this.ground, 11);
 
 
         this.HUD = new game.HUD.Container();
@@ -88,9 +81,16 @@ game.GameOverScreen = me.ScreenObject.extend({
         this.handler = null;
     },
 
-    onResetEvent: function() {
-
+    onResetEvent: function(type) {
+        if(type === 'gameover') {
+            game.data.score = 0;
+            game.data.level = 1;
+        } else if(type === 'level') {
+    
+        }
         game.data.finalSteps = game.data.steps;
+        
+        //Update firebase stuff
 
         var myRootRef = new Firebase('https://pulsario.firebaseio.com/results');
         myRootRef.push({
@@ -99,9 +99,11 @@ game.GameOverScreen = me.ScreenObject.extend({
             teamName: game.data.teamName
         });
 
-        game.data.steps = 0;
+        //Reset game data 
+
+        
         game.data.lives = 3;
-        game.data.level = 1;
+        
         game.data.originalSpeedModifier = 3;
         game.data.speedModifier = game.data.originalSpeedModifier;
 
@@ -125,10 +127,10 @@ game.GameOverScreen = me.ScreenObject.extend({
 
         this.alwaysUpdate = true;
         if (game.data.completedGame) {
-            me.game.world.addChild(new GameOverBackground(0, 0, 'gameoverbg-2', 10));
+           // me.game.world.addChild(new GameOverBackground(0, 0, 'gameoverbg-2', 10));
             game.data.completedGame = false;
         } else {
-            me.game.world.addChild(new GameOverBackground(0, 0, 'gameoverbg', 10));
+           // me.game.world.addChild(new GameOverBackground(0, 0, 'gameoverbg', 10));
         }
     },
   

@@ -7,6 +7,7 @@ game.resources = [
         src: "img/bg_header.png"
     }, 
 
+
     //Characters
 
     {
@@ -25,6 +26,8 @@ game.resources = [
         src: "img/char_vampire.png"
     },
 
+    
+    //Level One Enemys
 
     {
         name: "enemy-pumpkins_gy",
@@ -41,6 +44,31 @@ game.resources = [
         name: "enemy-spiders_gy",
         type: "image",
         src: "img/enemy-spiders_gy.png"
+    },
+
+    //Level Two Enemys
+
+    {
+        name: "enemy-skulls_hh",
+        type: "image",
+        src: "img/enemy-skulls_hh.png"
+    },
+
+    {
+        name: "enemy-skulls0_hh",
+        type: "image",
+        src: "img/enemy-skulls0_hh.png"
+    },
+  
+    {
+        name: "enemy-skeletons_hh",
+        type: "image",
+        src: "img/enemy-skeletons-hh.png"
+    },
+    {
+        name: "enemy-spiders_hh",
+        type: "image",
+        src: "img/enemy-spiders_hh.png"
     },
 
 
@@ -102,6 +130,16 @@ game.resources = [
         name: "ground-1",
         type: "image",
         src: "img/bg_graveyard.png"
+    },
+    {
+        name: "ground-2",
+        type: "image",
+        src: "img/bg_hauntedhouse.png"
+    },
+    {
+        name: "ground-3",
+        type: "image",
+        src: "img/bg_swamp.png"
     },
 
     {

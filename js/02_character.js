@@ -1,5 +1,4 @@
 var character = getUrlVars('char');
-console.log(character.char)
 var Character = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
@@ -42,15 +41,20 @@ var Character = me.ObjectEntity.extend({
                 this.pos.x += 8;
             }
         }
-        
+      
 
         var time = ((me.timer.getTime() % 60000) / 1000).toFixed(0);
-        console.log(time)
-        
+
         if(time == 10) {
             if(game.data.level != 2) {
                 game.data.level ++;
-            }
+                me.state.pause();
+               
+                for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
+                new TheGround
+                
+                me.state.resume();
+                }
             
         }
 
@@ -87,7 +91,7 @@ var Character = me.ObjectEntity.extend({
                     return this.parent(dt);
                 } else {
 
-                    me.state.change(me.state.GAME_OVER);
+                    me.state.change(me.state.GAME_OVER,'gameover');
                     return false;
                 }
             }
@@ -107,7 +111,6 @@ var Character = me.ObjectEntity.extend({
             game.data.steps += res.obj.points;
 
             var audioChance = Number.prototype.random(0, 2) + 1;
-            me.audio.play('hit-' + audioChance);
 
         } else {
 
@@ -115,7 +118,6 @@ var Character = me.ObjectEntity.extend({
             var hitLeft = 60; // bird height + 20px
             var hitRight = me.game.viewport.width - 60 - 71;
             if (this.pos.x >= hitRight || this.pos.x <= hitLeft) {
-                me.audio.play("disapointment");
                 me.device.vibrate(500);
                 game.data.lives--;
                 if (game.data.lives <= 0) {

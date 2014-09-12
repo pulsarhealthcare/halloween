@@ -12,6 +12,7 @@ var PipeEntity = me.ObjectEntity.extend({
         this.alwaysUpdate = true;
         this.gravity = 2;
         this.updateTime = false;
+
     },
 
     update: function(dt) {
@@ -19,6 +20,8 @@ var PipeEntity = me.ObjectEntity.extend({
         this.pos.add(new me.Vector2d(0, this.gravity * me.timer.tick * game.data.speedModifier));
         if (this.pos.y > 800) {
             me.game.world.removeChild(this);
+            var index = refPool.indexOf(this);
+            refPool.splice(index, 1);
         }
         return true;
     },
@@ -105,9 +108,14 @@ var PipeGenerator = me.Renderable.extend({
 
             var pipe1 = new me.pool.pull("pipe", posX1, this.posY, width1, enemys[game.data.level-1][random]);
             var pipe2 = new me.pool.pull("pipe", posX2, this.posY, width2, enemys[game.data.level-1][random]);
+            
+            refPool.push(pipe1);
+            refPool.push(pipe2);
 
+            
             if (showPipeThree) {
                 var pipe3 = new me.pool.pull("pipe", posX3, this.posY, width3,enemys[game.data.level-1][random]);
+                refPool.push(pipe3);
             }
 
             /*       pipe1.renderable.flipX(); */
