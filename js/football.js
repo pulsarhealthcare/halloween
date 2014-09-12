@@ -17,6 +17,9 @@ var GameOverBackground = me.ObjectEntity.extend({
         return true;
     },
 });
+
+
+
 var refPool = [];
 
 game.PlayScreen = me.ScreenObject.extend({
@@ -32,10 +35,9 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.start = false;
         game.data.newHiscore = false;
 
-       me.game.world.addChild(new BackgroundLayer('bg', 13));
+        me.game.world.addChild(new BackgroundLayer('bg', 13));
 
-        this.ground = new TheGround(true);
-        refPool.push(this.ground);
+        
         //me.game.world.addChild(this.ground, 11);
 
 

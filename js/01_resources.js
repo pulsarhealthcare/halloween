@@ -141,7 +141,7 @@ game.resources = [
         type: "image",
         src: "img/bg_swamp.png"
     },
-
+    
     {
         name: "gameoverbg",
         type: "image",
@@ -150,9 +150,13 @@ game.resources = [
         name: "life",
         type: "image",
         src: "img/life-pumpkin.png"
-    }
+    },
 
 
-
+    {
+        name: "screen_hauntedhouse",
+        type: "image",
+        src: "img/screen_hauntedhouse.png"
+    },
 
 ];

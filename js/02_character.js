@@ -25,7 +25,7 @@ var Character = me.ObjectEntity.extend({
             x: 10,
             y: 8
         }, 55, 70));
-
+        new TheGround;
         /*  console.log('touch?: ' + is_touch_device()); */
 
     },
@@ -44,16 +44,23 @@ var Character = me.ObjectEntity.extend({
       
 
         var time = ((me.timer.getTime() % 60000) / 1000).toFixed(0);
-
+        var oldTime = 0;
+        var l1Time = 0;
         if(time == 10) {
             if(game.data.level != 2) {
                 game.data.level ++;
                 me.state.pause();
-               
+
+                var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
+                me.game.world.addChild(lvlScreen);
+                
                 for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
                 new TheGround
+                setTimeout(function() {
+                    me.game.world.removeChild(lvlScreen);
+                      me.state.resume();
+                },1000)
                 
-                me.state.resume();
                 }
             
         }
