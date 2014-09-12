@@ -68,7 +68,7 @@ game.PlayScreen = me.ScreenObject.extend({
         me.game.world.addChild(new PipeGenerator(), 0);
         me.game.world.addChild(new RewardGenerator(), 0);
 
-
+        
 
     },
 

@@ -42,6 +42,18 @@ var Character = me.ObjectEntity.extend({
                 this.pos.x += 8;
             }
         }
+        
+
+        var time = ((me.timer.getTime() % 60000) / 1000).toFixed(0);
+        console.log(time)
+        
+        if(time == 10) {
+            if(game.data.level != 2) {
+                game.data.level ++;
+            }
+            
+        }
+
 
         var ignoreDeath = false;
         if (game.data.ignoreHitsCounter > 0) {
@@ -69,7 +81,6 @@ var Character = me.ObjectEntity.extend({
                 }
                 game.data.lives--;
 
-                me.audio.play("disapointment");
                 me.device.vibrate(500);
                 if (game.data.lives > 0) {
                     game.data.ignoreHitsCounter = 160 / game.data.speedModifier;

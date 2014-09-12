@@ -25,25 +25,22 @@ game.resources = [
         src: "img/char_vampire.png"
     },
 
+
     {
-        name: "enemy-pumpkins",
+        name: "enemy-pumpkins_gy",
         type: "image",
-        src: "img/enemy_pumpkins.png"
+        src: "img/enemy_pumpkins_gy.png"
+    },
+  
+    {
+        name: "enemy-skulls_gy",
+        type: "image",
+        src: "img/enemy-skulls_gy.png"
     },
     {
-        name: "enemy-ghosts",
+        name: "enemy-spiders_gy",
         type: "image",
-        src: "img/enemy_ghosts.png"
-    },
-    {
-        name: "enemy-skulls",
-        type: "image",
-        src: "img/enemy-skulls.png"
-    },
-    {
-        name: "enemy-spiders",
-        type: "image",
-        src: "img/enemy-spiders.png"
+        src: "img/enemy-spiders_gy.png"
     },
 
 

@@ -97,15 +97,17 @@ var PipeGenerator = me.Renderable.extend({
             }
             //Pipes here
             var enemys = [];
-            enemys[0] = ['pumpkins','skulls','spiders'];  
-            
+            enemys[0] = ['pumpkins_gy','skulls_gy','spiders_gy','spiders_gy'];  
+            enemys[1] = ['skeletons_hh','skulls_hh','skulls0_hh','spiders_hh'];
+            enemys[2] = ['ghosts_sw','ghosts0_sw','spiders_sw','skulls_sw'];
+
             var random =  Math.floor(Math.random() * 3) ;
-            console.log(random)
-            var pipe1 = new me.pool.pull("pipe", posX1, this.posY, width1, enemys[0][random]);
-            var pipe2 = new me.pool.pull("pipe", posX2, this.posY, width2, enemys[0][random]);
+
+            var pipe1 = new me.pool.pull("pipe", posX1, this.posY, width1, enemys[game.data.level-1][random]);
+            var pipe2 = new me.pool.pull("pipe", posX2, this.posY, width2, enemys[game.data.level-1][random]);
 
             if (showPipeThree) {
-                var pipe3 = new me.pool.pull("pipe", posX3, this.posY, width3,enemys[0][random]);
+                var pipe3 = new me.pool.pull("pipe", posX3, this.posY, width3,enemys[game.data.level-1][random]);
             }
 
             /*       pipe1.renderable.flipX(); */
