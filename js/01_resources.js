@@ -124,7 +124,7 @@ game.resources = [
         src: "img/reward_10.png"
     },
  
-
+    //Main backgrounds
 
     {
         name: "ground-1",
@@ -153,6 +153,17 @@ game.resources = [
     },
 
 
+    //Title screens
+    {
+        name: "screen_graveyard",
+        type: "image",
+        src: "img/screen_graveyard.png"
+    },
+    {
+        name: "screen_swamp",
+        type: "image",
+        src: "img/screen_swamp.png"
+    },
     {
         name: "screen_hauntedhouse",
         type: "image",

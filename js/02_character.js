@@ -1,4 +1,10 @@
 var character = getUrlVars('char');
+
+
+var oldTime = 0;
+var l1Time = 0;
+
+
 var Character = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
@@ -44,25 +50,35 @@ var Character = me.ObjectEntity.extend({
       
 
         var time = ((me.timer.getTime() % 60000) / 1000).toFixed(0);
-        var oldTime = 0;
-        var l1Time = 0;
-        if(time == 10) {
-            if(game.data.level != 2) {
-                game.data.level ++;
-                me.state.pause();
 
-                var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
-                me.game.world.addChild(lvlScreen);
-                
-                for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
-                new TheGround
-                setTimeout(function() {
-                    me.game.world.removeChild(lvlScreen);
-                      me.state.resume();
-                },1000)
-                
-                }
+        if(time == 10 && game.data.level === 1) {
             
+            game.data.level ++;
+            me.state.pause();
+
+            var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
+            me.game.world.addChild(lvlScreen);
+                
+            for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
+            new TheGround
+            setTimeout(function() {
+                me.game.world.removeChild(lvlScreen);
+                me.state.resume();
+                oldTime = time;
+            },1000)
+   
+        }
+
+        
+        if(game.data.level === 2) {
+            l1Time = (time - oldTime);
+           
+            if(l1Time == 20) {
+                
+
+                me.state.pause();
+                game.data.level ++;
+            }
         }
 
 
