@@ -1,5 +1,5 @@
 var character = getUrlVars('char');
-console.log(character.char);
+console.log(character.char)
 var Character = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
