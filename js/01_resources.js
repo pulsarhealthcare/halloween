@@ -4,8 +4,8 @@ game.resources = [
     {
         name: "bg",
         type: "image",
-        src: "data/img/bg.png"
-    },
+        src: "img/bg_header.png"
+    }, 
 
     //Characters
 
@@ -95,37 +95,17 @@ game.resources = [
         name: "ground-1",
         type: "image",
         src: "img/bg_graveyard.png"
-    }, {
-        name: "ground-2",
-        type: "image",
-        src: "data/img/bg-2.jpg"
-    }, {
-        name: "ground-3",
-        type: "image",
-        src: "data/img/bg-3.jpg"
     },
 
     {
         name: "gameoverbg",
         type: "image",
-        src: "data/img/gameoverbg.jpg"
-    }, {
-        name: "gameoverbg-2",
-        type: "image",
-        src: "data/img/gameoverbg-2.jpg"
-    }, {
-        name: "hit",
-        type: "image",
-        src: "data/img/hit.png"
+        src: "img/bc_gameover.png"
     }, {
         name: "life",
         type: "image",
         src: "img/life-pumpkin.png"
-    }, {
-        name: "transparent",
-        type: "image",
-        src: "data/img/transparent.png"
-    },
+    }
 
 
 
