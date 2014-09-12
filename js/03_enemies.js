@@ -1,7 +1,7 @@
 var PipeEntity = me.ObjectEntity.extend({
-    init: function(x, y, width) {
+    init: function(x, y, width, image) {
         var settings = {};
-        settings.image = me.loader.getImage('enemy-ghosts');
+        settings.image = me.loader.getImage('enemy-'+image);
         settings.width = width;
         settings.height = 48;
         settings.spritewidth = width;
@@ -73,8 +73,6 @@ var PipeGenerator = me.Renderable.extend({
 
             }
 
-
-
             var posX3 = cumulativeX + this.randomGap(gapWidth);
             cumulativeX = posX3;
 
@@ -97,13 +95,17 @@ var PipeGenerator = me.Renderable.extend({
             if (width3 < playerWidth) {
                 showPipeThree = false;
             }
-
-
-            var pipe1 = new me.pool.pull("pipe", posX1, this.posY, width1);
-            var pipe2 = new me.pool.pull("pipe", posX2, this.posY, width2);
+            //Pipes here
+            var enemys = [];
+            enemys[0] = ['pumpkins','skulls','spiders'];  
+            
+            var random =  Math.floor(Math.random() * 3) ;
+            console.log(random)
+            var pipe1 = new me.pool.pull("pipe", posX1, this.posY, width1, enemys[0][random]);
+            var pipe2 = new me.pool.pull("pipe", posX2, this.posY, width2, enemys[0][random]);
 
             if (showPipeThree) {
-                var pipe3 = new me.pool.pull("pipe", posX3, this.posY, width3);
+                var pipe3 = new me.pool.pull("pipe", posX3, this.posY, width3,enemys[0][random]);
             }
 
             /*       pipe1.renderable.flipX(); */

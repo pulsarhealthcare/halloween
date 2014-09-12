@@ -26,9 +26,24 @@ game.resources = [
     },
 
     {
+        name: "enemy-pumpkins",
+        type: "image",
+        src: "img/enemy_pumpkins.png"
+    },
+    {
         name: "enemy-ghosts",
         type: "image",
         src: "img/enemy_ghosts.png"
+    },
+    {
+        name: "enemy-skulls",
+        type: "image",
+        src: "img/enemy-skulls.png"
+    },
+    {
+        name: "enemy-spiders",
+        type: "image",
+        src: "img/enemy-spiders.png"
     },
 
 

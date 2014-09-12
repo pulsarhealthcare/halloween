@@ -105,12 +105,6 @@ game.GameOverScreen = me.ScreenObject.extend({
         game.data.originalSpeedModifier = 3;
         game.data.speedModifier = game.data.originalSpeedModifier;
 
-
-
-
-        me.audio.stop("crowd");
-        me.audio.play("outro");
-
         //save section
         this.savedData = {
             score: game.data.score,
