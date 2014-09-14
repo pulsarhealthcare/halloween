@@ -33,40 +33,18 @@
   		<span id="score-4" class="score"></span>
   	</div>
 
-  	<a id="leader-board-play-again" href="javascript:playAgain();"></a>
+
   	
   	<div id="screen"></div>
 
     <!-- melonJS Library -->
-    <script type="text/javascript" src="lib/melonJS-1.0.1.js" ></script>
-    <script type="text/javascript" src="build/football.js" ></script>
+
     <!-- Bootstrap & Mobile optimization tricks -->
     <script type="text/javascript">
-      window.onReady(function onReady() {
-        
 
-        // Mobile browser hacks
-        if (me.device.isMobile && !navigator.isCocoonJS) {
-          // Prevent the webview from moving on a swipe
-          window.document.addEventListener("touchmove", function (e) {
-            e.preventDefault();
-            window.scroll(0, 0);
-            return false;
-          }, false);
-
-          // Scroll away mobile GUI
-          (function () {
-            window.scrollTo(0, 1);
-            me.video.onresize(null);
-          }).defer();
-
-          me.event.subscribe(me.event.WINDOW_ONRESIZE, function (e) {
-            window.scrollTo(0, 1);
-          });
-        }
         
 		
-	        var myRootRef = new Firebase('https://pulsario.firebaseio.com/results');
+	 var myRootRef = new Firebase('https://pulsario.firebaseio.com/results');
 		
 		myRootRef.on('value', function(snapshot) {
 			function SortByScore(a, b){
@@ -87,11 +65,7 @@
 					counter++;
 					
 				});
-				
-				
-				
-			});
-		
+	
 		
       });
       

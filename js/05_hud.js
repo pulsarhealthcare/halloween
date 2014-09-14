@@ -26,7 +26,7 @@ game.HUD.Container = me.ObjectContainer.extend({
         // add our child score object at the top left corner
         this.addChild(new game.HUD.ScoreItem(5, 5));
         // add our child score object at the top left corner
-        this.addChild(new game.HUD.LevelItem(5, 5));
+        //this.addChild(new game.HUD.LevelItem(5, 5));
     }
 });
 
@@ -121,7 +121,9 @@ var BackgroundLayer = me.ImageLayer.extend({
 var LifeLayer = me.ObjectEntity.extend({
     init: function(x, y, lifeIndex) {
         var settings = {};
-        settings.image = me.loader.getImage('life');
+        console.log(character)
+        settings.image = me.loader.getImage('life-'+character.char);
+
         settings.width = 56;
         settings.height = 59;
         settings.spritewidth = 56;
@@ -140,12 +142,18 @@ var LifeLayer = me.ObjectEntity.extend({
     },
 
     update: function() {
-        if ((3 - game.data.lives) > this.lifeIndex && this.alive) {
+        if((this.lifeIndex + 1) > game.data.lives) {
             this.renderable.setCurrentAnimation("death");
             this.alive = false;
-
+        } else {
+            this.renderable.setCurrentAnimation("life");
+            this.alive = true;
         }
+           
+
+        
 
         return true;
+        
     }
 });

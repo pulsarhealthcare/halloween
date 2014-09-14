@@ -11,7 +11,7 @@ game.resources = [
     //Characters
 
     {
-        name: "character-pumkin",
+        name: "character-pumpkin",
         type: "image",
         src: "img/char_pumpkin.png"
     },
@@ -148,34 +148,57 @@ game.resources = [
         src: "img/reward_10.png"
     },
  
-    //Main backgrounds
+    //Level backgrounds
 
     {
         name: "ground-1",
         type: "image",
         src: "img/bg_graveyard.png"
     },
+   
     {
         name: "ground-2",
         type: "image",
-        src: "img/bg_hauntedhouse.png"
-    },
-    {
-        name: "ground-3",
-        type: "image",
         src: "img/bg_swamp.png"
     },
+     {
+        name: "ground-3",
+        type: "image",
+        src: "img/bg_hauntedhouse.png"
+    },
+    
+    //Life icons
+
+    {
+        name: "life-pumpkin",
+        type: "image",
+        src: "img/life-pumpkin.png"
+    },
+    {
+        name: "life-vampire",
+        type: "image",
+        src: "img/life-vampire.png"
+    },
+
+     {
+        name: "life-witch",
+        type: "image",
+        src: "img/life-witch.png"
+    },
+
+
+    //End of game backgrounds
     
     {
         name: "gameoverbg",
         type: "image",
-        src: "img/bc_gameover.png"
-    }, {
-        name: "life",
+        src: "img/bg_gameover.png"
+    }, 
+    {
+        name: "congratulationsbg",
         type: "image",
-        src: "img/life-pumpkin.png"
-    },
-
+        src: "img/bg_congratulations.png"
+    }, 
 
     //Title screens
     {

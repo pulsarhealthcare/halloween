@@ -1,14 +1,17 @@
 var character = getUrlVars('char');
+var isGameOverScreen = false;
+
+var isInputDown = false;
 
 
+var isNewLevel = true;
+var isNewGame = true;
 var oldTime = 0;
-var l1Time = 0;
-
-
+var curTime = 0;
 var Character = me.ObjectEntity.extend({
     init: function(x, y) {
         var settings = {};
-        settings.image = me.loader.getImage('character-'+character.char);
+        settings.image = me.loader.getImage('character-' + character.char);
         settings.width = 75;
         settings.height = 91;
         settings.spritewidth = 75;
@@ -37,56 +40,84 @@ var Character = me.ObjectEntity.extend({
     },
 
     update: function(dt) {
-        // mechanics
+        
+
+        //Game loop
+
+        //console.log(me.input.mouse.pos)
+
+
         if (game.data.start) {
 
-            /*      console.log(me.input.mouse); */
-            if (me.input.isKeyPressed('moveLeft') || (game.data.mDown && is_touch_device() && me.input.mouse.pos.x < (me.video.getWidth() / 2))) {
+            if(is_touch_device()) {
+
+            }
+            if (me.input.isKeyPressed('moveLeft')) {
                 this.pos.x -= 8;
-            } else if (me.input.isKeyPressed('moveRight') || (game.data.mDown && is_touch_device() && me.input.mouse.pos.x > (me.video.getWidth() / 2))) {
+            } else if (me.input.isKeyPressed('moveRight')) {
                 this.pos.x += 8;
             }
         }
-      
-
-        var time = ((me.timer.getTime() % 60000) / 1000).toFixed(0);
-
-        if(time == 10 && game.data.level === 1) {
-            
-            game.data.level ++;
-            me.state.pause();
-
-            var lvlScreen = new BackgroundLayer('screen_swamp', 21);
-            me.game.world.addChild(lvlScreen);
-                
-            for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
-            new TheGround;
-            setTimeout(function() {
-                me.game.world.removeChild(lvlScreen);
-                me.state.resume();
-                oldTime = time;
-            },1000)
-   
-        }
 
         
-        if(game.data.level === 2) {
-            l1Time = (time - oldTime);
+
+        var time = Math.round(me.timer.getTime() / 1000);
+
+        var screens = ['screen_graveyard', 'screen_swamp', 'screen_hauntedhouse'];
+
+        if (isNewLevel) {
+            //Stop game 
+            me.state.pause();
+             //Clear stage
+            for (var x = 0; x < refPool.length; x++) {
+                me.game.world.removeChild(refPool[x]);
+            }
+            //Reset Game if New
+
+            if(isNewGame) {
+                 game.data.lives = 3;
+                 game.data.level = 1;
+                 isNewGame = false;
+            }
+
+            //Show title screen
+            var lvlScreen = new BackgroundLayer(screens[game.data.level - 1], 21);
+            me.game.world.addChild(lvlScreen);
+            
            
-            if(l1Time == 20) {
-                var lvlScreen = new BackgroundLayer('screen_hauntedhouse', 21);
-                me.game.world.addChild(lvlScreen);
-                me.state.pause();
-                game.data.level ++;
-                for (var x = 0; x < refPool.length; x ++) { me.game.world.removeChild(refPool[x]); }
-            new TheGround;
-                setTimeout(function() {
-                me.game.world.removeChild(lvlScreen);
-                me.state.resume();
+
+            setTimeout(function() {
+                //Update game
                 oldTime = time;
-            },1000)
+                new TheGround;
+                me.state.resume();
+                isNewLevel = false;
+                setTimeout(function() {
+                    me.game.world.removeChild(lvlScreen);
+                }, 20)
+            }, 1000)
+
+        } else {
+            curTime = (time - oldTime);
+            if(curTime === 10) {
+                if(game.data.level === 3) {
+                  var lvlScreen = new BackgroundLayer('congratulationsbg', 21);
+                    me.game.world.addChild(lvlScreen);
+                    refPool.push(lvlScreen);
+                    me.state.pause();
+                    isGameOverScreen = true;
+                } else {
+                  isNewLevel = true;
+                  game.data.level ++;  
+                }
+                
             }
         }
+
+
+
+
+
 
 
         var ignoreDeath = false;
@@ -120,8 +151,13 @@ var Character = me.ObjectEntity.extend({
                     game.data.ignoreHitsCounter = 160 / game.data.speedModifier;
                     return this.parent(dt);
                 } else {
+                  
+                    var lvlScreen = new BackgroundLayer('gameoverbg', 21);
+                    me.game.world.addChild(lvlScreen);
+                    refPool.push(lvlScreen);
+                    me.state.pause();
+                    isGameOverScreen = true;
 
-                    me.state.change(me.state.GAME_OVER,'gameover');
                     return false;
                 }
             }
@@ -142,27 +178,7 @@ var Character = me.ObjectEntity.extend({
 
             var audioChance = Number.prototype.random(0, 2) + 1;
 
-        } else {
-
-            me.device.vibrate(500);
-            var hitLeft = 60; // bird height + 20px
-            var hitRight = me.game.viewport.width - 60 - 71;
-            if (this.pos.x >= hitRight || this.pos.x <= hitLeft) {
-                me.device.vibrate(500);
-                game.data.lives--;
-                if (game.data.lives <= 0) {
-
-                    me.state.change(me.state.GAME_OVER);
-                    return false;
-                }
-
-                game.data.ignoreHitsCounter = 160 / game.data.speedModifier;
-                this.pos.x = (me.game.viewport.width / 2) - (70 / 2);
-                return this.parent(dt);
-            }
-
-        }
-
+        } 
 
 
         if (game.data.speedModifier != game.data.originalSpeedModifier) {

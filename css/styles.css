@@ -41,24 +41,24 @@ body {
   -ms-interpolation-mode: nearest-neighbor;
 }
 
-#share {
-  margin: 10px auto;
-  text-align: center;
-}
-
-#share .fb-share-button iframe {
-  margin-top: -4px;
-}
-
 
 .preloadFont {
 	font-family: 'Oswald', sans-serif;
 	display: none;
 }
-#landing-page-terms{
-	background-image : url('./landing-images/terms.png');
+button {
+	background:none;
+	border:none;
+	outline:none;
+}
+.screen {
 	height:768px;
 	width:1024px;
+}
+
+#landing-page-terms{
+
+	
 	display:none;
 	position: relative;
 	top:-768px;;
@@ -74,11 +74,13 @@ body {
 }
 
 #landing-page {
-	background-image : url('./landing-images/background.jpg');
+	background : #CCC;
 	height:768px;
 	width:1024px;
 	margin:0 auto;
+	display:block;
 }
+
 
 #landing-page h1 {
 	padding-top:57px;
@@ -91,8 +93,17 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	margin:0px;
-		float:left;
-		padding-bottom:18px;
+	float:left;
+	padding-bottom:18px;
+}
+
+#landing-page button {
+	background:#333;
+	height:40px;
+	width:50px;
+	position: absolute;
+	top:10px;
+	left:10px;
 }
 
 #landing-page p {
@@ -116,6 +127,7 @@ body {
 	width: 168px
 }
 
+
 #user-form {
 	float:left;
 	margin-top:10px;
@@ -123,6 +135,7 @@ body {
 	width:190px;
 	clear: both;
 }
+
 
 
 #termslink {
@@ -134,103 +147,74 @@ body {
 	margin-left:42px;
 	clear: both;
 	width:190px;
-	
 }
 
-
-#kickoff-button {
-	float: left;
-	margin-top:7px;
-	margin-left:76px;
-	clear: both;
-
-}
-
-#team-name-page {
-	background-image : url('./landing-images/team-name-background.jpg');
-	height:768px;
-	width:1024px;
-	margin:0 auto;
+#enter_name {
+	background:url(/img/bg_entername.png);
 	display:none;
 }
 
-#team-name-textfield {
-	background-color:#dbe441;
-	border:none;
-	position:relative;
+#enter_name input {
+    width:706px;
+	height:100px;
+	position: absolute;
 	top:337px;
-	left:142px;
-	height:103px;
-	width:689px;
-	padding:0 20px;
-	color: #333;
-	font-size: 60px;
+	left:141px;
+    border:none;
+	font-size: 80px;
+	padding-left:20px;
+	background:none;
 }
 
-#team-name-button {
-	position:relative;
-	top:460px;
-	left:-587px;
-}
-
-#team-selection-page {
-	background-image : url('./landing-images/team-selection-background.jpg');
-	height:768px;
-	width:1024px;
-	margin:0 auto;
-	display: none;
-}
-
-
-#team-selection-table {
-	position: relative;
-	left:440px;
-	top:140px;
-	border-spacing: 23px;
-}
-
-#team-selection-button {
-	position:relative;
-	top:325px;
-	left:150px;
+#enter_name button {
+	width:122px;
+	height:45px;
+	position: absolute;
+	top:469px;
+	left:140px;
 	
+
 }
 
-#team-vs-page {
-	background-image : url('./landing-images/vs-background.jpg');
-	height:768px;
-	width:1024px;
-	margin:0 auto;
-	display: none;
+#select_character {
+background:url(/img/bg_selectchar.png);
+display:none;
 }
 
-#team-vs-left-image {
-	position: relative;
-	left:52px;
-	top:184px;
-	z-index: 1;
+#select_character button {
+	position: absolute;
+	width:278px;
+	height:263px;
+	
+	background:none;
+
 }
 
-#team-vs-right-image {
-	position: relative;
-	left:210px;
-	top:184px;
-	z-index: 1;
+#select_character button:nth-child(1) {
+	top:284px;
+	left:118px;
+}
+#select_character button:nth-child(2) {
+	top:284px;
+	left:396px;
+}
+#select_character button:nth-child(3) {
+	top:284px;
+	left:674px;
 }
 
-#team-label {
+#instructions {
+background:url(/img/bg_instructions.png);
+display:none;
+}
 
-	position: relative;
-	font-family: 'Oswald', sans-serif;
-	font-size:48px;
-	color:#14259b;
-	text-transform: uppercase;
-	z-index: 999;
-	top:92px;
-	left:77px;
-	overflow: hidden;
-	text-align: center;
-	width:340px;
+#instructions button {
+	width:170px;
+	height:100px;
+	top:500px;
+	left:400px;
+	position: absolute;
+
 }
 
 #leader-board{
@@ -241,19 +225,8 @@ body {
 }
 
 
-#instructions {
-	background-image : url('./landing-images/instructions-background.jpg');
-	height:768px;
-	width:1024px;
-	margin:0 auto;
-	display:none;
-}
 
-#instructions a {
-	float: left;
-	height:768px;
-	width:1024px;
-}
+
 
 .teamName, .score {
 	

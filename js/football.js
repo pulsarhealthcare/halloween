@@ -18,7 +18,16 @@ var GameOverBackground = me.ObjectEntity.extend({
     },
 });
 
-
+$(window).on('keydown', function(e) {
+    if(e.which === 80) {
+        if(me.state.isPaused()){
+             me.state.resume();
+        } else {
+             me.state.pause();
+        }
+       
+    }
+})
 
 var refPool = [];
 
@@ -31,6 +40,8 @@ game.PlayScreen = me.ScreenObject.extend({
 
         me.input.bindKey(me.input.KEY.LEFT, "moveLeft", false);
         me.input.bindKey(me.input.KEY.RIGHT, "moveRight", false);
+        //Add touch support
+
         game.data.score = 0;
         game.data.start = false;
         game.data.newHiscore = false;
@@ -43,6 +54,9 @@ game.PlayScreen = me.ScreenObject.extend({
 
         this.HUD = new game.HUD.Container();
         me.game.world.addChild(this.HUD);
+        
+        //Life stuff
+
 
         this.life1 = me.pool.pull("life", 47, 8, 0);
         this.life2 = me.pool.pull("life", 112, 8, 1);
@@ -62,7 +76,7 @@ game.PlayScreen = me.ScreenObject.extend({
         game.data.start = true;
         me.game.world.addChild(new PipeGenerator(), 0);
         me.game.world.addChild(new RewardGenerator(), 0);
-
+        
         
 
     },

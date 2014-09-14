@@ -172,7 +172,7 @@ var RewardGenerator = me.Renderable.extend({
                 var reward = new me.pool.pull("reward", posX, this.posY, rewardWidth);
 
                 me.game.world.addChild(reward, 10);
-
+                refPool.push(reward);
             }
 
         }
