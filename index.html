@@ -46,7 +46,7 @@
                     })
 
                     $('#instructions button').on('click', function() {
-                        window.location = 'game.html?char='+character;
+                        window.location = 'game.html?char='+character+'&fname='+userFirstName+'&lname='+userLastName+'&email='+userEmail+'&nick='+charName;
                     })
                 })
                 
@@ -57,7 +57,7 @@
 
             <div id="user-form">
                 <input id="firstname" class="textfield" placeholder="First name" />
-                <input id="surname" class="textfield" placeholder="Surname" />
+                <input id="lastname" class="textfield" placeholder="Surname" />
                 <input id="email" class="textfield" placeholder="Email" />
 
             </div>

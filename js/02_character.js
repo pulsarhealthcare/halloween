@@ -109,7 +109,8 @@ var Character = me.ObjectEntity.extend({
             if(curTime === 60) {
                 if(game.data.level === 3) {
                   var lvlScreen = new BackgroundLayer('congratulationsbg', 21);
-                    me.game.world.addChild(lvlScreen);
+                  
+                  me.game.world.addChild(lvlScreen);
                     refPool.push(lvlScreen);
                     me.state.pause();
                     isGameOverScreen = true;
