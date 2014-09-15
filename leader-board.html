@@ -35,7 +35,7 @@
         success : function(data) {
            var scores = data.split('<br>')
 
-           for(var x = 0 ; x < scores.length; x ++) {
+           for(var x = 0 ; x < 5; x ++) {
                var score = scores[x].split('-');
                $('ul').append('<li><h2>'+score[0]+'</h2><h2>'+score[1]+'</h2><div style="clear:both"></div></li>')
            }
