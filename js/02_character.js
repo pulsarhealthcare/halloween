@@ -58,12 +58,13 @@ var Character = me.ObjectEntity.extend({
         }
 
                if(hasMoved) {
-                console.log('here')
+       
                    if(moveDirection === 0) {
-                      this.pos.x -= 8;
+                      this.pos.x -= 12;
                    } else {
-                      this.pos.x += 8;
+                      this.pos.x += 12;
                    }
+                   hasMoved = false;
                }
          
 

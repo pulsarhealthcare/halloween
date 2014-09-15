@@ -66,8 +66,8 @@ game.loaded = function() {
     var lastX = 0;
 
     me.input.registerPointerEvent("pointerdown", me.game.viewport, function(e) {
-        isPointerDown = true;console.log('test ')
-        lastX = e.x;
+        isPointerDown = true;
+        lastX = e.targetTouches[0].pageX;
     });
     me.input.registerPointerEvent("pointerup", me.game.viewport, function(e) {
         isPointerDown = false;
@@ -75,18 +75,23 @@ game.loaded = function() {
 
     me.input.registerPointerEvent("pointermove", me.game.viewport, function(e) {
         hasMoved = false;
-        
-        if (isPointerDown) {
-
-            if (e.x > lastX) {
+        console.log(e);
+            if(isPointerDown) {
+               if (e.targetTouches[0].pageX > lastX) {
                 hasMoved = true;
                 moveDirection = 1;
+                lastX = e.targetTouches[0].pageX;
 
-            } else if (e.x < lastX) {
+            } else if (e.targetTouches[0].pageX < lastX) {
                 hasMoved = true;
                 moveDirection = 0;
+                lastX = e.targetTouches[0].pageX;
             }
-        }
+            }
+            
+
+
+
 
     });
 
