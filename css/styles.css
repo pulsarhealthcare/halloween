@@ -220,44 +220,42 @@ display:none;
 }
 
 #leader-board{
-	background-image : url('./landing-images/leaderboard-background.jpg'), url('./landing-images/play-again.png');
+	background-image : url('/img/bg_leaderboard.png');
 	height:768px;
 	width:1024px;
 	margin:0 auto;
 }
 
 
+#leader-board ul {
+	list-style: none;
+	position: absolute;
+	top:134px;
+	left:197px;
+	width:623px;
+}
 
+#leader-board li {
+	margin-bottom:45px;
+}
 
-
-.teamName, .score {
+#leader-board h2 {
 	
-	color:#14259b;
+	color:rgb(102,45,145);
 	font-family: 'Oswald', sans-serif;
 	font-size:45px;
 	float:left;
-	margin-bottom:45px;
-}
-.teamName {
-	margin-left:228px;
-	width:450px;
-	
+	margin:0px;
+	margin-left:4px;
+	letter-spacing: 2px;
+
 }
 
-.score {
-	width:120px;
-	margin-right:150px;
-	text-align: right;
+#leader-board h2:nth-child(2) {
 	float:right;
+	text-align: right;
 }
 
-#teamName-0 {
-	margin-top:146px;
-}
-
-#score-0 {
-	margin-top:146px;
-}
 #leader-board-play-again {
 	background-image : url('./landing-images/play-again.png');
 	width:1024px;
