@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <title>PULSARIO</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+        <script>
+                var charName, userFirstName, userLastName, userEmail, character;
+                $(document).ready(function() {
+
+                    $('#landing-page button').on('click', function() {
+                      if($('#firstname').val() === '') {
+                        alert('Please enter your first name')
+                      } else if($('#lastname').val() === '') {
+                        alert('Please enter your last name')
+                      } else if($('#email').val() === '') {
+                        alert('Please enter your last name')
+                      } else if (!$('#termsCheck').prop('checked')) {
+                        alert('Please accept our terms and conditions')
+                      } else {
+                         userFirstName = $('#firstname').val();
+                         userLastName = $('#lastname').val();
+                         userEmail = $('#email').val();
+                         $('#landing-page').hide();
+                         $('#enter_name').show()
+                      }
+                    })
+                    $('#enter_name button').on('click', function() {
+                        if($('#enter_name input').val() === ''){
+                        alert('Please enter a name');
+                        } else {
+                        charName = $('#enter_name input').val();
+                        $('#enter_name').hide();
+                        $('#select_character').show()
+                        }
+                    })
+
+                    $('#select_character button').on('click', function() {
+                        character = $(this).data('char');
+                        $('#select_character').hide();
+                        $('#instructions').show();
+                    })
+
+                    $('#instructions button').on('click', function() {
+                        window.location = 'game.html?char='+character;
+                    })
+                })
+                
+        </script>
+    </head>
+    <body>
+        <div class="screen" id="landing-page">
+
+            <div id="user-form">
+                <input id="firstname" class="textfield" placeholder="First name" />
+                <input id="surname" class="textfield" placeholder="Surname" />
+                <input id="email" class="textfield" placeholder="Email" />
+
+            </div>
+            <div id="termslink"><input type="checkbox" id="termsCheck" /> I agree to the <a>terms and conditions.</a></div>
+            <button/>
+         
+        </div>
+        <div id="landing-page-terms">
+            <a id="closeterms" href="javascript:hideTerms()">&nbsp;</a>
+        </div>
+        <div class="screen" id="enter_name">
+            <input/>
+            <button/>
+        </div>
+        <div class="screen" id="select_character">
+            <button data-char="pumpkin"/>
+            <button data-char="witch"/>
+            <button data-char="vampire"/>
+        </div>
+        <div class="screen" id="instructions">
+            <button>
+        </div>
+    </body>
+</html>

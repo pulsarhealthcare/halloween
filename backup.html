@@ -1,0 +1,68 @@
+   
+<script>
+   function submitDetailsForm() {
+                    var firstName = $('#firstname').val();
+                    var surname = $('#surname').val();
+                    var email = $('#email').val();
+                    var termsCheck = $('#termsCheck');
+                    $( "#kickoff-button" ).fadeTo( "fast" , 0.3);
+                $('#kickoff-button').prop('disabled', true);
+                    
+                var chatRef = new Firebase('https://pulsario.firebaseio.com');
+                var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+                if (error) {
+                alert('error' + error);
+                return;
+                }
+                if (!user) {
+                auth.login('anonymous', {rememberMe: true});
+                return;
+                }
+                mainUser = user;
+                        var myRootRef = new Firebase('https://pulsario.firebaseio.com/private');
+                        
+                        
+                        var obj = {};
+                        
+                        obj[user.uid] = {
+                firstname: firstName,
+                lastname: surname,
+                email: email };
+                myRootRef.set(obj);
+                    $('#landing-page').hide();
+                $('#instructions').show();
+                });
+                    
+                    }
+                    
+                    
+                oponentTeamKey = selectedTeamKey;
+                while (oponentTeamKey == selectedTeamKey) {
+                var rand = Math.floor(Math.random() * (opponents.length - 1));
+                oponentTeamKey = opponents[rand];
+                }
+                    
+                    
+                    $('#team-label').text(teamName);
+                    $('#team-selection-page').hide();
+                    $('#team-vs-left-image').attr('src' , './landing-images/left-' + selectedTeamKey + '.png');
+                    $('#team-vs-right-image').attr('src' , './landing-images/right-' + oponentTeamKey + '.png');
+                    $('#team-vs-page').show();
+                    
+                    setTimeout(letsPlay, 1000)
+                    //
+                    }
+                    
+                    function letsPlay() {
+                    $('#team-vs-page').hide();
+                    $('#screen').show();
+                var win = window.open('./game.html?teamName=' + encodeURIComponent(teamName) + '&oponentTeamKey='+oponentTeamKey + '&selectedTeamKey='+selectedTeamKey, '_self');
+                    }
+                    
+                    function selectedTeam(link, team) {
+                $('.flagImage').parent().css({ opacity: 0.4 });
+                    $(link).css({ opacity: 1 });
+                    
+                    selectedTeamKey = team;
+                    }
+</scipt>

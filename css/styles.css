@@ -1,0 +1,276 @@
+body {
+  background-color: #3C3C3C;
+  color: #fff;
+
+  /* Allow mouse dragging. */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-callout: none;
+  -ms-user-callout: none;
+  -o-user-callout: none;
+  -webkit-user-callout: none;
+  user-callout: none;
+  
+  /* disable touch panning/zooming */
+  -ms-touch-action: none;
+  touch-action: none;
+
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
+}
+
+
+#screen canvas {
+	max-height: 768px;
+}
+
+#screen canvas {
+  display: block;
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  
+  /* disable scaling interpolation */
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+
+.preloadFont {
+	font-family: 'Oswald', sans-serif;
+	display: none;
+}
+button {
+	background:none;
+	border:none;
+	outline:none;
+}
+.screen {
+	height:768px;
+	width:1024px;
+	position: relative;
+}
+
+#landing-page-terms{
+    display:none;
+	position: relative;
+	top:-768px;
+	margin:0 auto;
+}
+
+#closeterms {
+	width:100px;
+	height:100px;
+	float:left;
+	margin-top:100px;
+	margin-left:850px;
+}
+
+#landing-page {
+	background : #CCC;
+	height:768px;
+	width:1024px;
+	margin:0 auto;
+	display:block;
+	background:url(/img/bg_landingpage.png);
+}
+
+
+#landing-page h1 {
+	padding-top:57px;
+	margin-bottom:0px;
+	padding-left:42px;
+	width:190px;
+	color:#14259b;
+	font-family: 'Oswald', sans-serif;
+	font-size:28px;
+	text-align: center;
+	text-transform: uppercase;
+	margin:0px;
+	float:left;
+	padding-bottom:18px;
+}
+
+#landing-page button {
+
+	height:97px;
+	width:113px;
+	position: absolute;
+	top:589px;
+	left:67px;
+}
+
+#landing-page p {
+	float:left;
+	margin-left:42px;
+	margin-top:7px;
+	clear: both;
+	width:190px;
+	font-size:12px;
+	text-align: center;
+	font-family: sans-serif;
+	color:#333;
+	line-height: 15px;
+}
+
+#landing-page .textfield {
+	border:none;
+	padding:10px 11px;
+	color:#333;
+	margin-bottom:6px;
+	width: 168px;
+	height:17px;
+	outline:none;
+}
+
+
+#user-form {
+	float:left;
+	margin-top:408px;
+	margin-left:42px;
+	width:190px;
+	clear: both;
+}
+
+
+
+#termslink {
+	float: left;
+	margin-top:5px;
+	font-family: sans-serif;
+	color:#333;
+	font-size: 10px;
+	margin-left:42px;
+	clear: both;
+	width:190px;
+}
+
+#enter_name {
+	background:url(/img/bg_entername.png);
+	display:none;
+}
+
+#enter_name input {
+    width:706px;
+	height:100px;
+	position: absolute;
+	top:337px;
+	left:141px;
+    border:none;
+	font-size: 80px;
+	padding-left:20px;
+	background:none;
+}
+
+#enter_name button {
+	width:122px;
+	height:45px;
+	position: absolute;
+	top:469px;
+	left:140px;
+	
+
+}
+
+#select_character {
+background:url(/img/bg_selectchar.png);
+display:none;
+}
+
+#select_character button {
+	position: absolute;
+	width:278px;
+	height:263px;
+	
+	background:none;
+
+}
+
+#select_character button:nth-child(1) {
+	top:284px;
+	left:118px;
+}
+#select_character button:nth-child(2) {
+	top:284px;
+	left:396px;
+}
+#select_character button:nth-child(3) {
+	top:284px;
+	left:674px;
+}
+
+#instructions {
+background:url(/img/bg_instructions.png);
+display:none;
+}
+
+#instructions button {
+	width:170px;
+	height:100px;
+	top:500px;
+	left:400px;
+	position: absolute;
+
+}
+
+#leader-board{
+	background-image : url('./landing-images/leaderboard-background.jpg'), url('./landing-images/play-again.png');
+	height:768px;
+	width:1024px;
+	margin:0 auto;
+}
+
+
+
+
+
+.teamName, .score {
+	
+	color:#14259b;
+	font-family: 'Oswald', sans-serif;
+	font-size:45px;
+	float:left;
+	margin-bottom:45px;
+}
+.teamName {
+	margin-left:228px;
+	width:450px;
+	
+}
+
+.score {
+	width:120px;
+	margin-right:150px;
+	text-align: right;
+	float:right;
+}
+
+#teamName-0 {
+	margin-top:146px;
+}
+
+#score-0 {
+	margin-top:146px;
+}
+#leader-board-play-again {
+	background-image : url('./landing-images/play-again.png');
+	width:1024px;
+	height:768px;
+	margin:0 auto;
+	margin-top:-768px;
+	display:block;
+}
+body:after
+{
+content: url(left-algeria.png) url(left-argentina.png) url(left-brazil.png) url(left-cameroon.png) url(left-england.png) url(left-france.png) url(left-germany.png) url(left-greece.png) url(left-italy.png) url(left-japan.png) url(left-mexico.png) url(left-portugal.png) url(left-russia.png) url(left-southkorea.png) url(left-usa.png) url(right-algeria.png) url(right-argentina.png) url(right-brazil.png) url(right-cameroon.png) url(right-england.png) url(right-france.png) url(right-germany.png) url(right-greece.png) url(right-italy.png) url(right-japan.png) url(right-mexico.png) url(right-portugal.png) url(right-russia.png) url(right-southkorea.png) url(right-usa.png)
+display: none;
+}
+audio { height:0px; display:none;}
+
+

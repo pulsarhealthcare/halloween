@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>PULSARIO</title>
+    <link rel="apple-touch-icon-precomposed" href="data/img/touch-icon-iphone.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="data/img/touch-icon-iphone-retina.png"/>
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+	<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
+    </head>
+
+  <body>
+  	<div id="leader-board">
+  		<span id="teamName-0" class="teamName"></span>
+  		<span id="score-0" class="score"></span>
+  		<span id="teamName-1" class="teamName"></span>
+  		<span id="score-1" class="score"></span>
+  		<span id="teamName-2" class="teamName"></span>
+  		<span id="score-2" class="score"></span>
+  		<span id="teamName-3" class="teamName"></span>
+  		<span id="score-3" class="score"></span>
+  		<span id="teamName-4" class="teamName"></span>
+  		<span id="score-4" class="score"></span>
+  	</div>
+
+
+  	
+  	<div id="screen"></div>
+
+    <!-- melonJS Library -->
+
+    <!-- Bootstrap & Mobile optimization tricks -->
+    <script type="text/javascript">
+
+        
+		
+	 var myRootRef = new Firebase('https://pulsario.firebaseio.com/results');
+		
+		myRootRef.on('value', function(snapshot) {
+			function SortByScore(a, b){
+			  var aName = a.score;
+			  var bName = b.score;
+			  return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+			}
+				var scores = [];
+				snapshot.forEach(function(childSnapshot) {
+					scores.push(childSnapshot.val());				
+				});
+				
+				var counter = 0;
+				scores.sort(function(a,b) { return b.score - a.score; });
+				scores.forEach(function(result) { 
+					$('#teamName-' + counter).text(result.teamName);
+					$('#score-' + counter).text(result.score);
+					counter++;
+					
+				});
+	
+		
+      });
+      
+      function playAgain() {
+	      var queryDict = {}
+				$( "leader-board-play-again" ).fadeTo( "fast" , 0.3);
+				location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]})
+
+				var win = window.open('./game.html?teamName=' + queryDict.teamName + '&oponentTeamKey='+queryDict.oponentTeamKey + '&selectedTeamKey='+queryDict.selectedTeamKey, '_self');
+				
+      }
+      
+           
+      
+      
+    </script>
+
+  </body>
+</html>
