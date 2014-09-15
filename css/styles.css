@@ -219,6 +219,20 @@ display:none;
 
 }
 
+#instructions_2 {
+background:url(/img/bg_instructions_2.png);
+display:none;
+}
+
+#instructions_2 button {
+	width:170px;
+	height:100px;
+	top:500px;
+	left:400px;
+	position: absolute;
+
+}
+
 #leader-board{
 	background-image : url('/img/bg_leaderboard.png');
 	height:768px;
