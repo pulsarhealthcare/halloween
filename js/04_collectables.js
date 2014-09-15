@@ -96,14 +96,14 @@ var RewardEntity = me.ObjectEntity.extend({
         index = randomChoices[index];
         var reward = rewards[index];
         settings.image = me.loader.getImage('reward-' + reward.name);
-        settings.width = 74;
-        settings.height = 74;
-        settings.spritewidth = 74;
-        settings.spriteheight = 74;
+        settings.width = 75;
+        settings.height = 75;
+        settings.spritewidth = 75;
+        settings.spriteheight = 75;
         this.addShape(new me.Ellipse({
             x: 0,
             y: 0
-        }, 74, 76));
+        }, 75, 76));
         this.setShape(0);
 
 
