@@ -204,7 +204,7 @@ function postScore() {
     var uD = getUrlVars();
     console.log('ajax.php?request=store&fname='+uD.fname+'&lname='+uD.lname+'&email='+uD.email+'&nick='+uD.nick+'&score='+game.data.score)
     $.ajax({
-        url:'ajax.php?request=store&fname='+uD.fname+'&lname='+uD.lname+'&email='+uD.email+'&nick='+uD.nick+'&score='+game.data.score,
+        url:'ajax.php?request=store&fname='+uD.fname+'&lname='+uD.lname+'&email='+uD.email+'&nick='+uD.nick+'&score='+game.data.steps,
         success : function(data) {
             console.log(data)
         }
