@@ -19,10 +19,10 @@ if ($_GET['request'] === 'store') {
     VALUES ($fName, $lName, $email, $score, $nick )");
 } else if ($_GET['request'] === 'getscores') {
     
-    $result = mysqli_query($con, " SELECT * FROM data_collection ORDER BY score DESC LIMIT 10");
+    $result = mysqli_query($con, " SELECT * FROM data_collection ORDER BY score DESC LIMIT 5");
     
     while ($row = mysqli_fetch_array($result)) {
-        echo $row['first_name'] . " " . $row['last_name'] . "-" . $row['score'] . "|";
+        echo $row['first_name'] . " " . $row['last_name'] . "-" . $row['score'];
         echo "<br>";
     }
 }
