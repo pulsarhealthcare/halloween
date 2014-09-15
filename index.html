@@ -26,26 +26,22 @@
                          userLastName = $('#lastname').val();
                          userEmail = $('#email').val();
                          $('#landing-page').hide();
-                         $('#enter_name').show()
+                         $('#select_character').show()
                       }
                     })
-                    $('#enter_name button').on('click', function() {
-                        if($('#enter_name input').val() === ''){
-                        alert('Please enter a name');
-                        } else {
-                        charName = $('#enter_name input').val();
-                        $('#enter_name').hide();
-                        $('#select_character').show()
-                        }
-                    })
+               
 
                     $('#select_character button').on('click', function() {
                         character = $(this).data('char');
                         $('#select_character').hide();
                         $('#instructions').show();
                     })
-
                     $('#instructions button').on('click', function() {
+                        $('#instructions').hide();
+                        $('#instructions_2').show();
+                    })
+
+                    $('#instructions_2 button').on('click', function() {
                         window.location = 'game.html?char='+character+'&fname='+userFirstName+'&lname='+userLastName+'&email='+userEmail+'&nick='+charName;
                     })
                 })
@@ -68,17 +64,17 @@
         <div id="landing-page-terms">
             <a id="closeterms" href="javascript:hideTerms()">&nbsp;</a>
         </div>
-        <div class="screen" id="enter_name">
-            <input/>
-            <button/>
-        </div>
+      
         <div class="screen" id="select_character">
             <button data-char="pumpkin"/>
             <button data-char="witch"/>
             <button data-char="vampire"/>
         </div>
         <div class="screen" id="instructions">
-            <button>
+            <button/>
+        </div>
+          <div class="screen" id="instructions_2">
+           <button/>
         </div>
     </body>
 </html>
