@@ -44,9 +44,6 @@ var Character = me.ObjectEntity.extend({
 
         //Game loop
 
-        //console.log(me.input.mouse.pos)
-
-
         if (game.data.start) {
 
 
@@ -109,11 +106,12 @@ var Character = me.ObjectEntity.extend({
             if(curTime === 60) {
                 if(game.data.level === 3) {
                   var lvlScreen = new BackgroundLayer('congratulationsbg', 21);
-                  
+                  postScore();
                   me.game.world.addChild(lvlScreen);
                     refPool.push(lvlScreen);
                     me.state.pause();
                     isGameOverScreen = true;
+                   postScore()
                    
                 } else {
                   isNewLevel = true;
@@ -163,6 +161,7 @@ var Character = me.ObjectEntity.extend({
                 } else {
                   
                     var lvlScreen = new BackgroundLayer('gameoverbg', 21);
+                    postScore()
                     me.game.world.addChild(lvlScreen);
                     refPool.push(lvlScreen);
                     me.state.pause();
@@ -199,3 +198,12 @@ var Character = me.ObjectEntity.extend({
     },
 
 });
+
+
+function postScore() {
+    var uD = getUrlVars();
+
+    $.ajax({
+        url:'ajax.html?request=store&fname='+uD.fname+'&lname='+uD.lname+'&email='+uD.email+'&nick='+uD.nick+'&score='+game.data.score,
+    })
+}
