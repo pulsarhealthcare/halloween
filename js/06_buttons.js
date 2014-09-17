@@ -24,7 +24,29 @@ var LeaderButton = me.GUI_Object.extend({
 
 $('.score').bind('click ontouchstart', function(e) {
 
-      window.location = 'leader-board.html';
+/* Pass the GET vars along to the leader board page */
+
+var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+});
+
+character = $_GET["char"];
+userFirstName = $_GET["fname"];
+userLastName = $_GET["lname"];
+userEmail = $_GET["email"];
+charName = "";
+
+// end of GET vars declarations
+
+// Use window.location to move to the scores page so we can use them in leader-board.html
+
+window.location = 'leader-board.html?char='+character+'&fname='+userFirstName+'&lname='+userLastName+'&email='+userEmail+'&nick='+charName;
  
 });
 
@@ -39,7 +61,12 @@ console.log(isGameOverScreen);
           
                   isNewGame = true;
             isNewLevel = true;
-            for (var x = 0; x < refPool.length; x++) {
+        var oldTime = 0;
+        var curTime = 0;
+        game.data.steps = 0;
+
+
+    for (var x = 0; x < refPool.length; x++) {
                 me.game.world.removeChild(refPool[x]);
             }
            $('.score').css({"z-index": "-1"});

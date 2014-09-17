@@ -106,7 +106,7 @@ var Character = me.ObjectEntity.extend({
             if(curTime === 60) {
                 if(game.data.level === 3) {
                   var lvlScreen = new BackgroundLayer('congratulationsbg', 21);
-                  postScore();
+                //  postScore();
                   me.game.world.addChild(lvlScreen);
                     refPool.push(lvlScreen);
                     me.state.pause();
@@ -167,8 +167,11 @@ var Character = me.ObjectEntity.extend({
                     me.state.pause();
                     isGameOverScreen = true;
 
+                    // Game over screen is set to true so make additions here
+
                     $('.score').css({"z-index": "400"});
                     $('.restart').css({"z-index": "400"});
+
 
                     return false;
                 }
@@ -209,7 +212,8 @@ function postScore() {
     $.ajax({
         url:'ajax.php?request=store&fname='+uD.fname+'&lname='+uD.lname+'&email='+uD.email+'&nick='+uD.nick+'&score='+game.data.steps,
         success : function(data) {
-            console.log(data)
+  
+
         }
     })
 }

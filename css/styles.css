@@ -63,15 +63,6 @@ button {
 	margin:0 auto;
 }
 
-.score {
-position: absolute; width: 200px; height: 200px; top: 430px; left: 266px; z-index: 400; 
-}
-
-.restart { 
-position: absolute; width: 200px; height: 200px; top: 430px; left: 580px; z-index: 400; 
-}
-
-
     #closeterms {
 	width:100px;
 	height:100px;
@@ -200,6 +191,10 @@ display:none;
 
 }
 
+#select_character button:hover {
+cursor: pointer;	
+}
+
 #select_character button:nth-child(1) {
 	top:284px;
 	left:118px;
@@ -258,7 +253,8 @@ display:none;
 }
 
 #leader-board li {
-	margin-bottom:45px;
+	width: 600px;
+	height:110px;
 }
 
 #leader-board h2 {

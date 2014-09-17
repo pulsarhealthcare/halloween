@@ -7,7 +7,14 @@ game.data = {
     start: false,
     lives: 3,
     level: 1,
-    originalSpeedModifier: 3,
+
+// Adjust for debugging 
+
+    originalSpeedModifier: 10,
+//  originalSpeedModifier: 3,
+
+//
+
     speedModifier: 3,
     speedCounter: 0,
 

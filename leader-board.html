@@ -11,12 +11,16 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
 	<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js'></script>
-    </head>
 
-  <body>
-  	<div class="screen" id="leader-board">
-  	    <ul>
-            
+
+</head>
+
+
+<body>
+
+<div class="screen" id="leader-board">
+ 	    <ul>
+
             
         </ul>
   	</div>
@@ -25,24 +29,57 @@
   	
   	<div id="screen"></div>
 
-    <!-- melonJS Library -->
+    <div id="playagain" style="position: absolute; width: 350px; height: 200px;
+    top: 670px; left: 330px;"></div>
 
-    <!-- Bootstrap & Mobile optimization tricks -->
-    <script type="text/javascript">
+
+<script type="text/javascript">
+
+    $('#playagain').bind('click ontouchstart', function(e) {
+
+/* Pass the GET vars along to the leader board page */
+
+var $_GET = {};
+
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+});
+
+character = $_GET["char"];
+userFirstName = $_GET["fname"];
+userLastName = $_GET["lname"];
+userEmail = $_GET["email"];
+charName = "";
+
+// end of GET vars declarations
+
+window.location = 'game.html?char='+character+'&fname='+userFirstName+'&lname='+userLastName+'&email='+userEmail+'&nick='+charName;
+
+});
+
 
       $.ajax({
         url:'ajax.php?request=getscores',
         success : function(data) {
-           var scores = data.split('<br>')
 
-           for(var x = 0 ; x < 5; x ++) {
-               var score = scores[x].split('-');
-               $('ul').append('<li><h2>'+score[0]+'</h2><h2>'+score[1]+'</h2><div style="clear:both"></div></li>')
-           }
-        }
+           var scores = data;
+
+           console.log(scores);
+
+           $('#leader-board ul').append(scores);
+           
+      
+      }          
+
       })
 
-    </script>
+
+
+</script>
 
   </body>
 </html>
