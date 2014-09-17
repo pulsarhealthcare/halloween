@@ -41,7 +41,6 @@ body {
   -ms-interpolation-mode: nearest-neighbor;
 }
 
-
 .preloadFont {
 	font-family: 'Oswald', sans-serif;
 	display: none;
@@ -64,7 +63,16 @@ button {
 	margin:0 auto;
 }
 
-#closeterms {
+.score {
+position: absolute; width: 200px; height: 200px; top: 430px; left: 266px; z-index: 400; 
+}
+
+.restart { 
+position: absolute; width: 200px; height: 200px; top: 430px; left: 580px; z-index: 400; 
+}
+
+
+    #closeterms {
 	width:100px;
 	height:100px;
 	float:left;

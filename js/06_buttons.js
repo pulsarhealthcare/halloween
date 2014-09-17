@@ -20,23 +20,35 @@ var LeaderButton = me.GUI_Object.extend({
     }
 });
 
-$(window).bind('click', function(e) {
-      if(hitTest(e.pageX,e.pageY,210,144,512,565)) {
-         if(isGameOverScreen) {
-            isNewGame = true;
+
+
+$('.score').bind('click ontouchstart', function(e) {
+
+      window.location = 'leader-board.html';
+ 
+});
+
+
+
+$('.restart').bind('click ontouchstart', function(e) {
+
+console.log(isGameOverScreen);
+
+
+  if(isGameOverScreen) {
+          
+                  isNewGame = true;
             isNewLevel = true;
             for (var x = 0; x < refPool.length; x++) {
                 me.game.world.removeChild(refPool[x]);
             }
-            me.state.resume();
+           $('.score').css({"z-index": "-1"});
+           $('.restart').css({"z-index": "-1"}); 
+           me.state.resume();
          }
-      }
-      if(hitTest(e.pageX,e.pageY,220,210,446,263)) {
-         if(isGameOverScreen) {
-            window.location = 'leader-board.html';
-         }
-      }
-})
+
+});
+
 
 
 

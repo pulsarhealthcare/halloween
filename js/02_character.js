@@ -167,6 +167,9 @@ var Character = me.ObjectEntity.extend({
                     me.state.pause();
                     isGameOverScreen = true;
 
+                    $('.score').css({"z-index": "400"});
+                    $('.restart').css({"z-index": "400"});
+
                     return false;
                 }
             }
