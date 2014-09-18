@@ -29,7 +29,7 @@ game.onload = function(user, teamName) {
 
 
     var width = 1024;
-    var height = ($(window).height() < 768) ? $(window).height() : 768;
+    var height = ($(window).height() < 672) ? $(window).height() : 672;
     var scale = 1;
 
 

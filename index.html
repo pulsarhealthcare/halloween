@@ -45,6 +45,13 @@
                         window.location = 'game.html?char='+character+'&fname='+userFirstName+'&lname='+userLastName+'&email='+userEmail+'&nick='+charName;
                     })
                 })
+
+
+if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i)) {
+    $('html').addClass('ipad ios7');
+}
+
+                
                 
         </script>
     </head>

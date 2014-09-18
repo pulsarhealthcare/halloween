@@ -54,7 +54,8 @@ window.location = 'leader-board.html?char='+character+'&fname='+userFirstName+'&
 
 $('.restart').bind('click ontouchstart', function(e) {
 
-console.log(isGameOverScreen);
+//console.log(isGameOverScreen);
+//console.log(game.data.steps);
 
 
   if(isGameOverScreen) {
@@ -71,7 +72,7 @@ console.log(isGameOverScreen);
             }
            $('.score').css({"z-index": "-1"});
            $('.restart').css({"z-index": "-1"}); 
-           me.state.resume();
+          me.state.resume();
          }
 
 });

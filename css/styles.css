@@ -1,35 +1,31 @@
+html {
+}
+
 body {
-  background-color: #3C3C3C;
-  color: #fff;
-
-  /* Allow mouse dragging. */
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -moz-user-callout: none;
-  -ms-user-callout: none;
-  -o-user-callout: none;
-  -webkit-user-callout: none;
-  user-callout: none;
-  
-  /* disable touch panning/zooming */
-  -ms-touch-action: none;
-  touch-action: none;
-
-  /* Allow canvas to hit the edges of the browser viewport. */
-  margin: 0;
+margin: 0 !important;
 }
 
 
 #screen canvas {
-	max-height: 768px;
+	max-height: 672px;
+
+
 }
+
+
+@media (orientation:landscape) {
+    html.ipad.ios7 > body {
+        position: fixed;
+        bottom: 0;
+        margin: 0 !important;
+        width:100%;
+        height: 672px !important;
+    }
+}
+
 
 #screen canvas {
   display: block;
-  margin: auto;
   /* Hide the gap for font descenders. */
   
   /* disable scaling interpolation */
@@ -51,7 +47,7 @@ button {
 	outline:none;
 }
 .screen {
-	height:768px;
+	height: 672px;
 	width:1024px;
 	position: relative;
 }
@@ -59,8 +55,7 @@ button {
 #landing-page-terms{
     display:none;
 	position: relative;
-	top:-768px;
-	margin:0 auto;
+	top:-672px;
 }
 
     #closeterms {
@@ -73,11 +68,12 @@ button {
 
 #landing-page {
 	background : #CCC;
-	height:768px;
+/*	height:768px; */
+	height: 672px;
 	width:1024px;
-	margin:0 auto;
 	display:block;
 	background:url(/img/bg_landingpage.png);
+	background-size: 1024px 672px;
 }
 
 
@@ -98,11 +94,11 @@ button {
 
 #landing-page button {
 
-	height:97px;
+	height:120px;
 	width:113px;
 	position: absolute;
-	top:589px;
-	left:67px;
+	top:510px;
+	left:70px;
 }
 
 #landing-page p {
@@ -131,7 +127,7 @@ button {
 
 #user-form {
 	float:left;
-	margin-top:408px;
+	margin-top:354px;
 	margin-left:42px;
 	width:190px;
 	clear: both;
@@ -152,6 +148,7 @@ button {
 
 #enter_name {
 	background:url(/img/bg_entername.png);
+	background-size: 1024px 672px;
 	display:none;
 }
 
@@ -179,6 +176,7 @@ button {
 
 #select_character {
 background:url(/img/bg_selectchar.png);
+background-size: 1024px 672px;
 display:none;
 }
 
@@ -210,51 +208,58 @@ cursor: pointer;
 
 #instructions {
 background:url(/img/bg_instructions.png);
+background-size: 1024px 672px;
 display:none;
 }
 
 #instructions button {
 	width:170px;
 	height:100px;
-	top:500px;
-	left:400px;
+	top:440px;
+	left:410px;
 	position: absolute;
 
 }
 
+#landing-page button:hover, #instructions button:hover, #instructions_2 button:hover {
+cursor: pointer;	
+}
+
 #instructions_2 {
 background:url(/img/bg_instructions_2.png);
+background-size: 1024px 672px;
 display:none;
 }
 
 #instructions_2 button {
 	width:170px;
 	height:100px;
-	top:500px;
-	left:400px;
+	top:440px;
+	left:410px;
 	position: absolute;
 
 }
 
 #leader-board{
 	background-image : url('/img/bg_leaderboard.png');
-	height:768px;
+	background-size: 1024px 672px;
+	height:672px;
 	width:1024px;
-	margin:0 auto;
 }
 
 
 #leader-board ul {
 	list-style: none;
 	position: absolute;
-	top:134px;
+	top:143px;
 	left:197px;
 	width:623px;
+	margin: 0;
 }
 
 #leader-board li {
 	width: 600px;
-	height:110px;
+	height:89px;
 }
 
 #leader-board h2 {
@@ -276,10 +281,10 @@ display:none;
 
 #leader-board-play-again {
 	background-image : url('./landing-images/play-again.png');
+	background-size: 1024px 672px;
 	width:1024px;
-	height:768px;
-	margin:0 auto;
-	margin-top:-768px;
+	height:672px;
+	margin-top:-672px;
 	display:block;
 }
 body:after

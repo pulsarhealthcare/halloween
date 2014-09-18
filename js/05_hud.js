@@ -45,10 +45,10 @@ game.HUD.ScoreItem = me.Renderable.extend({
         this.parent(new me.Vector2d(x, y), 10, 10);
 
         // local copy of the global score
-        this.stepsFont = new me.Font('Oswald', 40, '#00259a', 'right');
+        this.stepsFont = new me.Font('Oswald', 30, '#00259a', 'right');
 
         // make sure we use screen coordinates
-        this.floating = true;
+        this.floating = false;
     },
 
     update: function() {
@@ -79,7 +79,7 @@ game.HUD.LevelItem = me.Renderable.extend({
         this.stepsFont = new me.Font('Oswald', 72, '#00259a', 'center');
 
         // make sure we use screen coordinates
-        this.floating = true;
+        this.floating = false;
 
 
     },
@@ -106,7 +106,7 @@ var BackgroundLayer = me.ImageLayer.extend({
     init: function(image, z, speed) {
         name = image;
         width = 1024;
-        height = 768;
+        height = 672;
         ratio = 1;
         // call parent constructor
         this.parent(name, width, height, image, z, ratio);
@@ -124,10 +124,10 @@ var LifeLayer = me.ObjectEntity.extend({
         console.log(character)
         settings.image = me.loader.getImage('life-'+character.char);
 
-        settings.width = 56;
-        settings.height = 59;
-        settings.spritewidth = 56;
-        settings.spriteheight = 59;
+        settings.width = 40;
+        settings.height = 42;
+        settings.spritewidth = 40;
+        settings.spriteheight = 42;
 
         this.alive = true;
         this.lifeIndex = lifeIndex;

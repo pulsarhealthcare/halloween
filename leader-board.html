@@ -30,10 +30,15 @@
   	<div id="screen"></div>
 
     <div id="playagain" style="position: absolute; width: 350px; height: 200px;
-    top: 670px; left: 330px;"></div>
+    top: 558px; left: 330px;"></div>
 
 
 <script type="text/javascript">
+
+if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i)) {
+    $('html').addClass('ipad ios7');
+}
+
 
     $('#playagain').bind('click ontouchstart', function(e) {
 
@@ -76,6 +81,7 @@ window.location = 'game.html?char='+character+'&fname='+userFirstName+'&lname='+
       }          
 
       })
+
 
 
 

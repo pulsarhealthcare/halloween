@@ -3,9 +3,9 @@ var GameOverBackground = me.ObjectEntity.extend({
         var settings = {};
         settings.image = me.loader.getImage(image);
         settings.width = 1024;
-        settings.height = 768;
+        settings.height = 672;
         settings.spritewidth = 1024;
-        settings.spriteheight = 768;
+        settings.spriteheight = 690;
         this.parent(x, y, settings);
     },
 
